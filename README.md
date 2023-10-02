@@ -1,6 +1,6 @@
-# Partner Lab Template
+# FSO CNAO Compentency Workshop Lab Guide
 
-Project template for creating partner labs.
+Hugo Lab Guide template for the FSO CNAO Competency Workshop.
 
 ## Prerequisites
 
@@ -10,8 +10,6 @@ Project template for creating partner labs.
 
 ## How to Create Content
 
-- Create a fork of this repo to your own repo that will host the lab content.
-- Clone your forked repo to your workstation.
 - Add content in Markdown language to the `content` folder.
   - Folders can be added. They will be displayed in the side menu in alphabetical order. There are sample files to show how content is organized.
 
