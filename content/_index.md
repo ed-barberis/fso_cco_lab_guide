@@ -1,10 +1,11 @@
 ---
-title: "Index Page"
-date: 2021-01-25T12:52:26-07:00
+title: "Cisco CNAO"
+date: 2023-10-25T12:52:26-07:00
 ---
 
 # FSO Cloud Native Application Observability
 
+test
 ## Introduction
 
 This lab is currently under construction. Stay tuned for updates soon.
