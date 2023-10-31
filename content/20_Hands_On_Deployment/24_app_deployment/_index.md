@@ -4,7 +4,7 @@ chapter = false
 weight = 4
 +++
 
-In this segment, you'll roll out the OpenTelemetry demo application, which comes pre-instrumented with the OpenTelemetry SDK. This eliminates the need for you to manually instrument the app or deploy auto-instrumentation agents. The only modification you'll need to make in the application's deployment code is to direct the OpenTelemetry data to the collectors that were set up in earlier sections.
+In this segment, you'll roll out the OpenTelemetry demo application, which comes pre-instrumented with the OpenTelemetry SDK and agents. This eliminates the need for you to manually instrument the app or deploy auto-instrumentation agents. The only modification you'll need to make in the application's deployment code is to direct the OpenTelemetry data to the collectors that were set up in earlier sections.
 
 OpenTelemetry Demo consists of microservices written in different programming languages that communicate with each other via gRPC and HTTP, and a load generator that uses Locust to fake user traffic. The figure below showcases the application service diagram.
 
@@ -93,6 +93,14 @@ OpenTelemetry Demo Application URLs
 ![image](/images/24_app_deploy/demo_home_page.png)
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Repeat the process to check out other services like Grafana, Feature Flags UI, and so on.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CNAO tenant via the **CNAO Tenant URL** and check to see if the OpenTelemetry collector is sending any data to the platform.
+
+Go to the **Observe** page and apply a filter like `EntityStatus = 'active'  && attributes(service.namespace) = 'cnao-lab-06-i0xoc'` to narrow down the display to services specific to your lab environment. Be sure to use your own namespace name, which is stored in the **cnao_lab_id** environment variable.
+
+![image](/images/24_app_deploy/CNAO_deployed.png)
+
+You've successfully configured OpenTelemetry collectors to transmit data to the CNAO platform!
 
 <br>
 

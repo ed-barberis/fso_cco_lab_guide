@@ -48,8 +48,8 @@ themeVariant = "mine"
 home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-graduation-cap'></i> AppDynamics Documentation"
-url = "https://docs.appdynamics.com"
+name = "<i class='fas fa-graduation-cap'></i> CNAO Documentation"
+url = "https://docs.appdynamics.com/fso/cloud-native-app-obs/en/"
 weight = 10
 
 [markup]
