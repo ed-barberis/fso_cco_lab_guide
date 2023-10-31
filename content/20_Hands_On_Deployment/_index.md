@@ -1,7 +1,7 @@
 +++
-title = "CNAO Setup Overview"
+title = "Hands-on Deployment"
 chapter = false
-weight = 3
+weight = 1
 +++
 
 ## Introduction

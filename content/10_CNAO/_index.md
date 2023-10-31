@@ -1,5 +1,5 @@
 +++
-title = "CNAO"
+title = "CNAO Overview"
 chapter = false
 weight = 1
 +++

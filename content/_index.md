@@ -3,69 +3,32 @@ title: "Cisco CNAO"
 date: 2023-10-25T12:52:26-07:00
 ---
 
-# FSO Cloud Native Application Observability
+# Cloud Native Application Observability
 
-test
-## Introduction
+In this workshop you will explore how Cisco Cloud Native Application Observability (CNAO) can be used to monitor your cloud-native applications and infrastructure.
 
-This lab is currently under construction. Stay tuned for updates soon.
+![image](/images/10_cnao/introduction_cnao.png)
 
-## Tanta non ferunt
+## Learning Objectives
+- Understand the Fundamentals of Cloud Native Application Observability: Gain a solid understanding of the key concepts, terminologies, and components that make up cloud-native application observability, including metrics, logs, and traces.
+- Master the Use of Cisco CNAO platform: Learn how to navigate and effectively utilize CNAO platform for monitoring, troubleshooting, and gaining insights into cloud-native applications.
+- Integrate with OpenTelemetry: Learn how to prepare Kubernetes Operators and OpenTelemetry Collectors to setup data collection and exporting of metrics, logs, and traces to CNAO.
+- Implement Effective Monitoring Strategies: Acquire the skills to set up and configure various monitoring agents and collectors, focusing on best practices to ensure optimal performance and reliability.
+- Analyze and Interpret Data: Develop the ability to analyze and interpret observability data, using tools like dashboards and alerts to identify performance bottlenecks, errors, or other issues in real-time.
+- Hands-On Experience: Gain practical experience through lab exercises that guide you through the process of deploying a demo application, setting up monitoring, and analyzing performance data.
 
-Lorem markdownum consumpserat **dura quantaque vetitis**. Parabat urbe adicit
-anus dapes quodque patuitque odium memorabile intumuit requies: ante nimiumque
-sucis. Cui [aratri](http://dentemque.io/iaculum), in vidit maledictaque pondere
-habet non Cinyphius quam talisque, undique.
+## Who Can Benefit?
+- DevOps Engineers: Those responsible for deploying and managing cloud-native applications can gain valuable insights into monitoring and observability best practices.
+- System Administrators: Individuals responsible for the overall health of the IT environment can learn how to set up effective monitoring and alerting systems for cloud-native applications.
 
-## Petit volvitur verba inperfectus altis mortis esse
 
-Hic suo altus vidistis dotatissima illis certare. Arvo turribus: varius male
-[sublimis iacere](http://www.latratibusin.net/glandes.aspx).
+## Workshop Structure
+- Introduction to Cloud Native Application Observability and monitoring challenges
+- Deploying CNAO components for monitoring of cloud-native applications.
+- Utulizing CNAO dashboards and tools for effective monitoring strategy.
 
-1. Adde fetus et venis pennis domo Iovem
-2. Virgineusque dum exsilit
-3. Utque auctore est prope viderat spatium
+<br>
 
-## Virgine urnam nec capillis vivere et annum
+## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
-Quid foret, altis, adulantum, eam recensent quod: recepi, opus: ore fraudare.
-Sine vis temone diversa desere Quiriti, carentem **est fuit melioris**, ponto
-coniunx urbis aevum per genus clamore.
-
-### Demisit adit vatis prosunt perpessae putaret
-
-Sanet non dumque capillos: taurorum perfregit verbere, nunc nec dixit violaeque.
-Occursu sparsus brevis moenibus planguntur excidit sollicita satis, Eurydicen
-intendit tura, illuc alti.
-
-    banner_solid_mca += rupSerpGraphics;
-    wirelessIpxAscii = friend_bar_framework;
-    var twain_ad_software = friend_copyright_page;
-    cd_drive(textOfficeSystem * cdfs, bookmarkMonochrome(1, metal, record),
-            remote);
-
-### Patulosque potuit
-
-Solo proculcat nova: novum illa artus debuit pro laetior media clarus! In unda
-carmina leto. Recentia fatentem Iuventae nebulasque remeasse nonne purus quid
-Cereris tertia, silet sedet successu emissi, Lycaei ripam Alcmene super.
-
-Se dedit nec pontus moras vertitur nexu, loca natura, meo extra revirescere
-tendere Somni requiemque. Regere res carior ventura remoliri et, ab, tu vocat
-pronusque domus indestrictus, ut teneat medio at quantus? Aeacus hanc anus et
-reseret terribiles vagans, nec Alcmenae mirantum rudis *recondidit* cultus, a?
-
-## Interea ore haec et honor matrem moratur
-
-Lorem markdownum, sed **Parosque**, sed bisque raptam equos; tibi negabat: Quid,
-Perseus. Aetas fuit fugatis.
-
-Nec semina propositum exercent. *Munere* maior *vale vix*, quod quoque annis;
-passim praecepta Martis, regia.
-
-> Vocatur genitorque lumina inmitibus, oculis, sunt notavi tum fieri
-> [contraria](http://solebant-suos.com/indishominis) totumque iunci. Se eris
-> speciosa mortale feroces tactusque inque agnus si adspice regnat. *Omne* vapor
-> Lucifer sufficit obstitit date [vetitae
-> condebat](http://quimetu.com/istisvertere.php) nomina, aquas optastis armis.
-> Tempora neque quid aera vocari per tuendos fluctus: at sunt quia.
+You'll delve into the details of monitoring cloud-native applications and discover how Cisco Cloud Native Application Observability aims to address the associated challenges.
