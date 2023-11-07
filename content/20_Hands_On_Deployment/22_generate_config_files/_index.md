@@ -23,9 +23,7 @@ Here, you'll generate your own set of credentials, which will be used for settin
 
 Use this value for both the credential set name in the first field and the unique name of the Kubernetes cluster in the second field. </span>
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **ENABLE ADDITIONAL CONFIGURATIONS** section, ensure that **Cluster Collector**, **Infra Collector**, and **Log Collector Agent** are all selected, choosing *Linux* for the OS option.</span>
-
-> TODO: In the configuration instructions the security monitoring is selected. We don't have access to that. Additionally, it looks like the UI changed, so you can also select Log configuration from the menu.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **ENABLE ADDITIONAL CONFIGURATIONS** section, ensure that **Cluster Collector**, **Infra Collector**, **Log Collector Agent**, and **Security Monitoring** are all selected, choosing *Linux* for the OS option where applicable.</span>
 
 Below is an example showcasing both values configured. Make sure to use your own data in the input fields.
 
