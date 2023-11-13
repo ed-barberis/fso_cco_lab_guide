@@ -25,7 +25,7 @@ In this workshop you will explore how Cisco Cloud Native Application Observabili
 ## Workshop Structure
 - Introduction to Cloud Native Application Observability and monitoring challenges
 - Deploying CNAO components for monitoring of cloud-native applications.
-- Utulizing CNAO dashboards and tools for effective monitoring strategy.
+- Utilizing CNAO UI and tools for effective monitoring and troubleshooting strategy.
 
 <br>
 

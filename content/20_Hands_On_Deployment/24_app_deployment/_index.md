@@ -98,6 +98,8 @@ OpenTelemetry Demo Application URLs
 
 Go to the **Observe** page and apply a filter like `EntityStatus = 'active'  && attributes(service.namespace) = 'cnao-lab-06-i0xoc'` to narrow down the display to services specific to your lab environment. Be sure to use your own namespace name, which is stored in the **cnao_lab_id** environment variable.
 
+> Use your own service namespace name which you can retrieve from the `$cnao_lab_id` environment variable.
+
 ![image](/images/24_app_deploy/CNAO_deployed.png)
 
 You've successfully configured OpenTelemetry collectors to transmit data to the CNAO platform!
