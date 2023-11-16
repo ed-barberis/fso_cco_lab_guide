@@ -1,8 +1,11 @@
 +++
-title = "Generate Configuration Files"
+title = "Prepare Configuration Files"
 chapter = false
 weight = 2
 +++
+
+
+## Configure Kubernetes and Application Performance Monitoring
 
 The initial step in configuring Kubernetes and application monitoring involves creating credentials and generating a series of Helm charts. These charts are essential for deploying the components needed for cluster monitoring.
 The Cloud Native Application Observability (CNAO) platform offers a guided, step-by-step methodology to walk you through the entire procedure.
@@ -51,7 +54,7 @@ Having successfully generated the essential configuration files for monitoring t
 
 ![image](/images/22_k8s_and_app/c9_select_file.png)
 
-You've successfully created the configuration files needed for setting up Kubernetes and APM service monitoring. 
+You've successfully created the configuration files needed for setting up Kubernetes and Application Performance Monitoring. 
 
 <br>
 

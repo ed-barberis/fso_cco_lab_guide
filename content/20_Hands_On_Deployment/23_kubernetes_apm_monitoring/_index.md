@@ -95,7 +95,7 @@ The chart installs the following components
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Modify the existing **collectors-values.yaml** to configure logging. Use the command `./enable_cnao_collectors_logging_config.sh`.
 
-> This script will integrate the appropriate configuration into the initial collector values that you've downloaded from the CNAO platform.
+> **Note:** This script will integrate the appropriate configuration into the initial collector values that you've downloaded from the CNAO platform.
 
 ```bash
 cnao-lab-06-vm[ec2-user]$ ./enable_cnao_collectors_logging_config.sh
@@ -150,12 +150,19 @@ appdynamics-cloud-k8s-monitoring:
       maxBytes: 1000000
 appdynamics-otel-collector:
   clientId: agt_36gQInfA1Olao7BtQOjf
-  clientSecret: E_kWi1ToU2A3NYb6tBDnbR1TRypBRiJZ2vp7I_w
-  endpoint: https://flintconsultingltd-nfr.observe.appdynamics.com/data
-  tokenUrl: https://flintconsultingltd-nfr.observe.appdynamics.com/auth/8312fd12-51b3-48cf-9ae1-a7ec72f5f0/default/oauth2/token
+  clientSecret: E_kWi1ToU2A3NYb6tBwii1TRypBRiJZ2vp7I_w
+  endpoint: https://appd-se-channel.observe.appdynamics.com/data
+  tokenUrl: https://appd-se-channel.observe.appdynamics.com/auth/ec5424c4-19fe-4c29-nono-b585efa910bd/default/oauth2/token
+appdynamics-security-collector:
+  enabled: true
+  panoptica:
+    controller:
+      agentID: fd6207f2-1d84-4db0-b582-d1b91466b2b5
+      secret:
+        sharedSecret: 2aOB78tYgyb0fGEWG34svL4T65lHdIMnonoLlSly9yjQ=
 ```
 
-Observe that **logCollector** is enabled for installation, and it comes with specific conditional configuration settings designed to process the logs prior to forwarding them to CNAO.
+Observe that **logCollector** is enabled for installation, and it comes with specific conditional configuration settings designed to process the logs prior to forwarding them to CNAO. Additionally, the **appdynamics-security-collector** is activated, enabling Cisco Secure Application within the CNAO tenant, providing insights into the security vulnerabilities of your deployments.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Install the OpenTelemetry collectors using the newly created 'collectors-values-with-logging.yaml' file. Use the command `helm install appdynamics-collectors appdynamics-cloud-helmcharts/appdynamics-collectors -n appdynamics -f collectors-values-with-logging.yaml`.
 

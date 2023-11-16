@@ -32,6 +32,18 @@ helm install \
     --values otel-demo-webstore-override.yaml \
     -n $cnao_lab_id
 ```
+
+The **otel-demo-webstore-override.yaml** file modifies the default OpenTelemetry settings to ensure telemetry data is directed to the AppDynamics version of the OpenTelemetry Collector, previously deployed on your Kubernetes cluster. View the file's contents using the command `cat otel-demo-webstore-override.yaml`.
+```yaml
+
+opentelemetry-collector:
+  config:
+    exporters:
+      otlp/cnao:
+        endpoint: "appdynamics-otel-collector-service.appdynamics.svc.cluster.local:4317"
+        ...
+<... output omitted ...>
+```
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify OpenTelemetry Demo application deployment using the command `kubectl get pods -n $cnao_lab_id`.
 
 ```bash
@@ -92,17 +104,27 @@ OpenTelemetry Demo Application URLs
 
 ![image](/images/24_app_deploy/demo_home_page.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Repeat the process to check out other services like Grafana, Feature Flags UI, and so on.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Use the OpenTelemetry Demo Application URLs to access the *Feature Flags UI* in your browser and modify the **CartServiceFailure** feature.
+
+![image](/images/24_app_deploy/features_1.png)
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Activate the feature by checking the **Enabled** box and save your changes.
+
+![image](/images/24_app_deploy/features_2.png)
+
+This ensures that the application produces errors for later observation in CNAO.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CNAO tenant via the **CNAO Tenant URL** and check to see if the OpenTelemetry collector is sending any data to the platform.
 
-Go to the **Observe** page and apply a filter like `EntityStatus = 'active'  && attributes(service.namespace) = 'cnao-lab-06-i0xoc'` to narrow down the display to services specific to your lab environment. Be sure to use your own namespace name, which is stored in the **cnao_lab_id** environment variable.
+Go to the **Observe** page and apply a filter `EntityStatus = 'active'  && attributes(service.namespace) = 'cnao-lab-06-i0xoc'` to narrow down the display to services specific to your lab environment. Be sure to use your own namespace name, which is stored in the **cnao_lab_id** environment variable.
 
-> Use your own service namespace name which you can retrieve from the `$cnao_lab_id` environment variable.
+> **Note:** Retrieve your own service namespace by using the command `echo $cnao_lab_id` in your Cloud9 instance terminal.
 
 ![image](/images/24_app_deploy/CNAO_deployed.png)
 
 You've successfully configured OpenTelemetry collectors to transmit data to the CNAO platform!
+
+> **Note:** It may take a while for CNAO to display significant data, so now is a great opportunity to take a break!
 
 <br>
 

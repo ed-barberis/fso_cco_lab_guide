@@ -6,29 +6,27 @@ weight = 1
 
 You access the lab environment through an AWS-hosted Cloud9 instance, which gives you a fully configured workspace right in your browser. Make sure to obtain your CNAO Lab User Credentials before the class starts. If you haven't acquired them yet, reach out to your instructor for guidance.
 
-Here is an example of the essential URLs you need for smooth access to the lab, along with the credentials stored in 1Password. Make sure you have all variables that are listed below:
+Below is a list of crucial URLs and credentials required for seamless access to the lab. Ensure you have received all the variables mentioned:
 
 - URLs:
-    - **Credentials URL**: https://share.1password.com/s#jCYAV5XdnwxsjKs3
-    - **AWS Login URL**: https://39558032.signin.aws.amazon.com/console
-    - **Cloud9 URL**: https://us-east-2.console.aws.amazon.com/cloud9/ide/abcde012345678e0123456789ab
-    - **CNAO Tenant URL**: https://appd-se-channel.observe.appdynamics.com/ui/observe
+    - **Credentials URL**: *provided by instructor*
+    - **AWS Login URL**: *provided by instructor*
+    - **Cloud9 URL**: *provided by instructor*
+    - **CNAO Tenant URL**: *provided by instructor*
 
 - Credentials:
-    - **Lab Participant**: John Doe
-    - **AWS Region**: us-east-2 [Ohio]
-    - **Lab User**: CNAO Lab 01
-    - **AWS User**: cloud9-lab-user-01
-    - **CNAO Tenant User**: lab-user-01
-
-> **Note**: The examples provided above are solely for illustrative purposes; you should obtain your own unique set of lab access information.
+    - **Lab Participant**: *provided by instructor*
+    - **AWS Region**: *provided by instructor*
+    - **Lab User**: *provided by instructor*
+    - **AWS User**: *provided by instructor*
+    - **CNAO Tenant User**: *provided by instructor*
 
 The URL and Credentials variables will be cited in the relevant sections of the instructions as required.
 
 ### AWS Cloud9 Login Instructions
 Here are the guidelines for accessing your AWS Cloud9 instance, which will serve as your lab environment for the duration of this course.
 
-1. Open a new tab in your browser and paste the 1Password **Credentials URL**. This 1Password instance contains all the credentials you need.
+1. Open a new tab in your browser and paste the **Credentials URL**. This 1Password instance contains all the credentials you need.
 ![image](/images/21_access/pass_manager.png)
 
 2. In a new tab, paste the **AWS Login URL**. Then, switch to the 1Password tab to copy both the *username* and *password* fields before clicking the *Sign in* button.

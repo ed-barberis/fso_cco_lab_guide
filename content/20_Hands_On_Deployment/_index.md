@@ -21,6 +21,8 @@ Additionally you can setup Prometheus or Host Monitoring Data sources.
 
 ![image](/images/13_setup/infra_monitoring_data_source.png)
 
+> **Note:** The AWS Cloud Connection has been pre-configured in your lab environment.
+
 ### Kubernetes and App Service Installation Overview
 Depending on the current application deployment and OpenTelemetry strategy, you can consider two approaches to start monitoring your Kubernetes cluster and app services:
 

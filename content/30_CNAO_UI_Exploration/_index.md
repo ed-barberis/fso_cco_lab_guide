@@ -1,5 +1,5 @@
 +++
-title = "CNAO UI Exploration"
+title = "Explore CNAO"
 chapter = false
 weight = 2
 +++
@@ -14,7 +14,7 @@ In this journey through the Cisco Cloud Native Application Observability (CNAO) 
 
 ## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
-You navigate through the CNAO interface to explore the application you set up earlier, focusing on the layers that are visible and connected in the platform. Starting with the Kubernetes domain, you will learn how to monitor and detect issues related to the Kubernetes cluster in which your application is running.
+You navigate through the CNAO interface to explore the application you set up earlier, focusing on the domains that are visible and connected in the platform. Starting with the Kubernetes domain, you will learn how to monitor and detect issues related to the Kubernetes cluster in which your application is running.
 
 <br>
 

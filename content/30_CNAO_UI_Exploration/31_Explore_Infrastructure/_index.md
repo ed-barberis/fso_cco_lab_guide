@@ -1,5 +1,5 @@
 +++
-title = "Explore Cluster Infrastructure"
+title = "Explore Kubernetes Infrastructure"
 chapter = false
 weight = 1
 +++
@@ -44,7 +44,6 @@ The central panel presents a detailed snapshot of the cluster's current performa
 
 The right-hand menu consolidates data from various views, offering a quick summary of cluster health and essential properties like tags, names, and versions.
 
-> **TODO**: why is only cartservice visible here?
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; You can adjust the time range in the upper-right corner, which will update the data displayed in the views to reflect the chosen time period.
 
@@ -75,7 +74,7 @@ A health rule violation happens when the set critical or warning conditions of t
 
 ![image](/images/31_explore_ui/4_expand_health_violation.png)
 
-> Your screen might look a bit different from the image shown above.
+> **Note:** Your screen might look a bit different from the image shown above.
 
 Learn more about Health Rules by navigating [here](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/monitor-entity-health/health-rules).
 
@@ -140,6 +139,10 @@ The Efficiency and Risk Profiler evaluates Kubernetes workloads for performance 
 
 Analysis results for deployments consistently feature the Analysis Summary, Reliability Risk, and Efficiency Rate. However, specific Opportunities and Cautions are provided only when sufficient data is available for an accurate assessment.
 
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **Health and Alerting** panel on the righ, the **Security** section displays vulnerabilities in your workloads and services. The Cisco Secure Application uses **Kenna** and **CVSS** scores to indicate these vulnerabilities.
+
+The panel displays an entity overall risk level, considering factors like vulnerabilities, Kubernetes misconfigurations, and its impact on the business transaction's risk score, which also factors in business impact and data leakage risks. Learn more about Kenna vulnerability scoring [here](https://help.kennasecurity.com/hc/en-us/articles/360026160592-Vulnerability-Scoring-in-Cisco-Vulnerability-Management).
+
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; As you scroll down, you'll see various metrics and statuses providing an overview of the workload's performance.
 
 ![image](/images/31_explore_ui/12_workloads_details_2.png)
@@ -164,7 +167,30 @@ The Containers page displays real-time and historical performance data for Kuber
 
 ![image](/images/31_explore_ui/14_containers.png)
 
-You've navigated through Kubernetes domain entities within the CNAO interface, gaining insights on how to pinpoint issues tied to Kubernetes infrastructure. 
+
+### Cloud Entities
+
+After you [Configure Cloud Connections](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/cloud-and-infrastructure-monitoring/aws-cloud-observability/configure-aws-cloud-connections), you can also monitor cloud specific services such as API Gateways, Load Balabncers, Elastic Container Services, and hosts in AWS.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the **Host** entity from the container relationship panel to inspect the single host where the container is deployed.
+
+![image](/images/31_explore_ui/cloud_1.png)
+
+In the relationships panel, observe that the host is linked to other cloud entities like Load Balancers and Storage. 
+
+On the right panel, host properties are displayed, and in the center, graphs provide a visual representation of the entity's performance.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Select the **Load Balancer** Entity from the relationship panel. 
+
+![image](/images/31_explore_ui/cloud_2.png)
+
+In Cloud Native Application Observability (CNAO), you can observe how Amazon Application, Classic, and Network load balancers manage incoming HTTP and HTTPS traffic across multiple Availability Zones. These load balancers assess the health status of backend targets, directing traffic only to those that are healthy and dynamically adjusting to shifting traffic patterns. Additionally, you can see the Load Balancer entity within CNAO, providing insights into its operation and integration with your infrastructure.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the **Storage** Entity from the relationship panel. To view the Storage entity, you may need to navigate back in your browser, as there is no direct relationship defined between the current load balancer and storage in the interface.
+
+![image](/images/31_explore_ui/cloud_3.png)
+
+You've explored Kubernetes domain entities in the CNAO interface, learning to identify issues related to Kubernetes infrastructure, observing vulnerability detection for workloads, and understanding the relationship between Kubernetes entities and those managed by Cloud Connections like AWS.
 
 <br>
 
