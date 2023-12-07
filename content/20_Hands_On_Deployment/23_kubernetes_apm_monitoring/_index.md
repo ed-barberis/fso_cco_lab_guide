@@ -9,24 +9,24 @@ Before proceeding with the installation of the Kubernetes operator and OpenTelem
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In your Cloud9 environment's terminal window, run the command `aws eks --region $aws_region_name update-kubeconfig --name $aws_eks_cluster_name` to retrieve AWS EKS *kubeconfig*.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ aws eks --region $aws_region_name update-kubeconfig --name $aws_eks_cluster_name
-Updated context arn:aws:eks:eu-central-1:395719258032:cluster/CNAO-Lab-06-i0xoc-EKS in /home/ec2-user/.kube/config
+cco-lab-06-vm[ec2-user]$ aws eks --region $aws_region_name update-kubeconfig --name $aws_eks_cluster_name
+Updated context arn:aws:eks:eu-central-1:395719258032:cluster/CCO-Lab-06-i0xoc-EKS in /home/ec2-user/.kube/config
 ```
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Confirm your access to the Kubernetes cluster by executing any `kubectl` commands you're comfortable with.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl get nodes -o wide
+cco-lab-06-vm[ec2-user]$ kubectl get nodes -o wide
 NAME                                            STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP     OS-IMAGE         KERNEL-VERSION                  CONTAINER-RUNTIME
 ip-172-16-1-212.eu-central-1.compute.internal   Ready    <none>   27d   v1.27.5-eks-43840fb   172.16.1.212   35.157.74.151   Amazon Linux 2   5.10.192-183.736.amzn2.x86_64   containerd://1.6.19
 ip-172-16-2-17.eu-central-1.compute.internal    Ready    <none>   27d   v1.27.5-eks-43840fb   172.16.2.17    3.70.180.185    Amazon Linux 2   5.10.192-183.736.amzn2.x86_64   containerd://1.6.19
 ```
 
 ## Deploying Components to the Kubernetes Cluster
-In the next section, you'll begin deploying essential components needed for successful Kubernetes and application monitoring using CNAO.
+In the next section, you'll begin deploying essential components needed for successful Kubernetes and application monitoring using CCO.
 
 ### Deploy Certification Manager
-In Kubernetes, the API server needs to securely communicate with the OpenTelemetry™ Operator's webhook, as part of the Cloud Native Application Observability Helm charts. This requires a trusted TLS certificate. Cert-manager automates the generation of self-signed certificates for this purpose.
+In Kubernetes, the API server needs to securely communicate with the OpenTelemetry™ Operator's webhook, as part of the Cisco Cloud Observability Helm charts. This requires a trusted TLS certificate. Cert-manager automates the generation of self-signed certificates for this purpose.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Install the most recent version of the certificate manager (cert-manager) onto the cluster.
 
@@ -37,7 +37,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify *cert-manager* deployment. Make sure the status of all pods is **Running**
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl get pods -n cert-manager
+cco-lab-06-vm[ec2-user]$ kubectl get pods -n cert-manager
 NAME                                       READY   STATUS    RESTARTS   AGE
 cert-manager-75d57c8d4b-58w5w              1/1     Running   0          4m36s
 cert-manager-cainjector-69d6f4d488-mh26g   1/1     Running   0          4m36s
@@ -50,14 +50,14 @@ You will use a set of Helm charts and custom configuration files that you previo
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Add the AppDynamics Helm Chart repository using the `helm repo add` command.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ helm repo add appdynamics-cloud-helmcharts https://appdynamics.jfrog.io/artifactory/appdynamics-cloud-helmcharts/
+cco-lab-06-vm[ec2-user]$ helm repo add appdynamics-cloud-helmcharts https://appdynamics.jfrog.io/artifactory/appdynamics-cloud-helmcharts/
 "appdynamics-cloud-helmcharts" has been added to your repositories
 ```
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify the installed charts using the `helm repo list` command.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ helm repo list
+cco-lab-06-vm[ec2-user]$ helm repo list
 NAME                            URL                                                                   
 open-telemetry                  https://open-telemetry.github.io/opentelemetry-helm-charts            
 appdynamics-cloud-helmcharts    https://appdynamics.jfrog.io/artifactory/appdynamics-cloud-helmcharts/
@@ -66,7 +66,7 @@ appdynamics-cloud-helmcharts    https://appdynamics.jfrog.io/artifactory/appdyna
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Create *appdynamics* Kubernetes namespace using the command `kubectl create namespace appdynamics`.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl create namespace appdynamics
+cco-lab-06-vm[ec2-user]$ kubectl create namespace appdynamics
 namespace/appdynamics created
 ```
 
@@ -74,7 +74,7 @@ namespace/appdynamics created
 
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ helm install appdynamics-operators appdynamics-cloud-helmcharts/appdynamics-operators -n appdynamics -f operators-values.yaml --wait
+cco-lab-06-vm[ec2-user]$ helm install appdynamics-operators appdynamics-cloud-helmcharts/appdynamics-operators -n appdynamics -f operators-values.yaml --wait
 
 <... output omitted ...>
 
@@ -93,32 +93,32 @@ The chart installs the following components
 <... output omitted ...>
 ```
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Modify the existing **collectors-values.yaml** to configure logging. Use the command `./enable_cnao_collectors_logging_config.sh`.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Modify the existing **collectors-values.yaml** to configure logging. Use the command `./enable_cco_collectors_logging_config.sh`.
 
-> **Note:** This script will integrate the appropriate configuration into the initial collector values that you've downloaded from the CNAO platform.
+> **Note:** This script will integrate the appropriate configuration into the initial collector values that you've downloaded from the CCO platform.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ ./enable_cnao_collectors_logging_config.sh
+cco-lab-06-vm[ec2-user]$ ./enable_cco_collectors_logging_config.sh
 Begin processing Helm Chart files...
-Extracting CNAO configuration values...
+Extracting CCO configuration values...
 
 client_id: agt_36gQInfueAOlao7BtQOjf
 client_secret: E_kWi1ToU2A3NYb6tglypBRiJZ2vp7I_w
-cluster_name: cnao-lab-06-i0xoc-eks
+cluster_name: cco-lab-06-i0xoc-eks
 collector_endpoint: https://flintconsultingltd-nfr.observe.appdynamics.com/data
 token_url: https://flintconsultingltd-nfr.observe.appdynamics.com/auth/8312fd12-51b3-48cf-9ae1-a7ec72f5f0/default/oauth2/token
 
 Creating new 'collectors-values-with-logging.yaml' file with logging configuration...
 
-CNAO Collectors file: 'collectors-values-with-logging.yaml' created.
-Enable CNAO Collectors Logging configuration operation complete.
+CCO Collectors file: 'collectors-values-with-logging.yaml' created.
+Enable CCO Collectors Logging configuration operation complete.
 ```
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify the new collectors configuration in *collectors-values-with-logging.yaml* file. Use the command `cat collectors-values-with-logging.yaml`.
 
 ```yaml
 global:
-  clusterName: cnao-lab-06-i0xoc-eks
+  clusterName: cco-lab-06-i0xoc-eks
 appdynamics-cloud-k8s-monitoring:
   install:
     logCollector: true
@@ -162,7 +162,7 @@ appdynamics-security-collector:
         sharedSecret: 2aOB78tYgyb0fGEWG34svL4T65lHdIMnonoLlSly9yjQ=
 ```
 
-Observe that **logCollector** is enabled for installation, and it comes with specific conditional configuration settings designed to process the logs prior to forwarding them to CNAO. Additionally, the **appdynamics-security-collector** is activated, enabling Cisco Secure Application within the CNAO tenant, providing insights into the security vulnerabilities of your deployments.
+Observe that **logCollector** is enabled for installation, and it comes with specific conditional configuration settings designed to process the logs prior to forwarding them to CCO. Additionally, the **appdynamics-security-collector** is activated, enabling Cisco Secure Application within the CCO tenant, providing insights into the security vulnerabilities of your deployments.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Install the OpenTelemetry collectors using the newly created 'collectors-values-with-logging.yaml' file. Use the command `helm install appdynamics-collectors appdynamics-cloud-helmcharts/appdynamics-collectors -n appdynamics -f collectors-values-with-logging.yaml`.
 
@@ -218,7 +218,7 @@ Make sure that the status of all is set to **Running**.
 
 <br>
 
-The Kubernetes Operator and AppDynamics Distribution of OpenTelemetry collectors are now set up and configured to transmit data to the Cloud Native Application Observability backend.
+The Kubernetes Operator and AppDynamics Distribution of OpenTelemetry collectors are now set up and configured to transmit data to the Cisco Cloud Observability backend.
 
 
 ## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;

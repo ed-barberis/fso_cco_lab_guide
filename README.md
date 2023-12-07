@@ -1,6 +1,6 @@
-# FSO CNAO Compentency Workshop Lab Guide
+# FSO CCO Compentency Workshop Lab Guide
 
-Hugo Lab Guide template for the FSO CNAO Competency Workshop.
+Hugo Lab Guide template for the FSO CCO Competency Workshop.
 
 ## Prerequisites
 

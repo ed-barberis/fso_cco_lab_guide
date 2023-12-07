@@ -6,24 +6,24 @@ weight = 1
 
 ## Introduction
 
-In the area of cloud-native applications, the Kubernetes cluster serves as a crucial foundation for your deployed services. Familiarizing yourself with CNAO's monitoring capabilities will give you a comprehensive overview of the [Kubernetes domain and its associated entities](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/kubernetes-and-app-service-monitoring/entities/kubernetes-entities) such as namespaces, workloads, pods, and containers. This introduction to monitoring with CNAO will guide you through the process of observing the health, performance, and intricacies of your Kubernetes cluster. 
+In the area of cloud-native applications, the Kubernetes cluster serves as a crucial foundation for your deployed services. Familiarizing yourself with CCO's monitoring capabilities will give you a comprehensive overview of the [Kubernetes domain and its associated entities](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/kubernetes-and-app-service-monitoring/entities/kubernetes-entities) such as namespaces, workloads, pods, and containers. This introduction to monitoring with CCO will guide you through the process of observing the health, performance, and intricacies of your Kubernetes cluster. 
 
-You will learn about various entities and their relationships within the Kubernetes domain of the CNAO platform.
+You will learn about various entities and their relationships within the Kubernetes domain of the CCO platform.
 
 ## Navigate the Kubernetes Domain
-You will learn to identify and analyze the important metrics, understand the relationships between the various entities, and use this knowledge to maintain a robust and efficient cloud infrastructure. Whether you want to troubleshoot potential issues or optimize resource allocation, CNAO will provide you with the insights you need to keep your Kubernetes environment running smoothly.
+You will learn to identify and analyze the important metrics, understand the relationships between the various entities, and use this knowledge to maintain a robust and efficient cloud infrastructure. Whether you want to troubleshoot potential issues or optimize resource allocation, CCO will provide you with the insights you need to keep your Kubernetes environment running smoothly.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CNAO tenant via the **CNAO Tenant URL**.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CCO tenant via the **CCO Tenant URL**.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Go to the **Observe** page and click the **Clusters** entity within the Kubernetes domain.
 
 ![image](/images/31_explore_ui/ui_cluster_initial.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(k8s.cluster.name) = 'cnao_lab_id'` to the existing filter. Ensure you replace *cnao_lab_id* with the actual environment variable from your Cloud9 environment.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(k8s.cluster.name) = 'cco_lab_id'` to the existing filter. Ensure you replace *cco_lab_id* with the actual environment variable from your Cloud9 environment.
 
 ![image](/images/31_explore_ui/ui_cluster_filtered.png)
 
-In the Observe and list views, filters allow you to tailor your display to show only the entities and data of interest. Cloud Native Application Observability enables filtering based on:
+In the Observe and list views, filters allow you to tailor your display to show only the entities and data of interest. Cisco Cloud Observability enables filtering based on:
 
 - Attributes
 - EntityStatus
@@ -50,7 +50,7 @@ The right-hand menu consolidates data from various views, offering a quick summa
 ![image](/images/31_explore_ui/ui_cluster_time_select.png)
 
 ### Cost Insights
-The Cost Insights module on the Cisco Full Stack Observability (FSO) platform extends CNAO by analyzing cloud and cloud-native workloads. It generates detailed cost data for infrastructure workloads and services and integrates this information as a new metric into the entity-centric pages of CNAO.
+The Cost Insights module on the Cisco Full Stack Observability (FSO) platform extends CCO by analyzing cloud and cloud-native workloads. It generates detailed cost data for infrastructure workloads and services and integrates this information as a new metric into the entity-centric pages of CCO.
 
 ![image](/images/31_explore_ui/ui_cost_insights.png)
 
@@ -184,13 +184,13 @@ On the right panel, host properties are displayed, and in the center, graphs pro
 
 ![image](/images/31_explore_ui/cloud_2.png)
 
-In Cloud Native Application Observability (CNAO), you can observe how Amazon Application, Classic, and Network load balancers manage incoming HTTP and HTTPS traffic across multiple Availability Zones. These load balancers assess the health status of backend targets, directing traffic only to those that are healthy and dynamically adjusting to shifting traffic patterns. Additionally, you can see the Load Balancer entity within CNAO, providing insights into its operation and integration with your infrastructure.
+In Cisco Cloud Observability (CCO), you can observe how Amazon Application, Classic, and Network load balancers manage incoming HTTP and HTTPS traffic across multiple Availability Zones. These load balancers assess the health status of backend targets, directing traffic only to those that are healthy and dynamically adjusting to shifting traffic patterns. Additionally, you can see the Load Balancer entity within CCO, providing insights into its operation and integration with your infrastructure.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the **Storage** Entity from the relationship panel. To view the Storage entity, you may need to navigate back in your browser, as there is no direct relationship defined between the current load balancer and storage in the interface.
 
 ![image](/images/31_explore_ui/cloud_3.png)
 
-You've explored Kubernetes domain entities in the CNAO interface, learning to identify issues related to Kubernetes infrastructure, observing vulnerability detection for workloads, and understanding the relationship between Kubernetes entities and those managed by Cloud Connections like AWS.
+You've explored Kubernetes domain entities in the CCO interface, learning to identify issues related to Kubernetes infrastructure, observing vulnerability detection for workloads, and understanding the relationship between Kubernetes entities and those managed by Cloud Connections like AWS.
 
 <br>
 

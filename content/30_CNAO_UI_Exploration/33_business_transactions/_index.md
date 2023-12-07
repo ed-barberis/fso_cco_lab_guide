@@ -8,18 +8,18 @@ weight = 3
 
 A Business Transaction visually represents the requests and responses within an application's services, offering an end-to-end view of the processing path for fulfilling service requests. It's a crucial element for monitoring, encompassing essential services like login and checkout, and reflects user interactions with your applications, such as adding items to a cart or checking out, involving various applications, databases, and APIs.
 
-In Cloud Native Application Observability, Business Transactions represent a key entity, linked to application services and service instances.
+In Cisco Cloud Observability, Business Transactions represent a key entity, linked to application services and service instances.
 
 ## Identifying Business Transactions
 In this section, you'll discover how to effectively navigate and utilize the Business Transactions entity as a powerful tool in your monitoring strategy.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CNAO tenant via the **CNAO Tenant URL**.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CCO tenant via the **CCO Tenant URL**.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Go to the **Observe** page and click the **Business Tranasctions** entity within the Application Performance Monitoring domain.
 
 ![image](/images/33_business_transactions/initial.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(service.namespace) = 'cnao_lab_id'` to the existing filter. Ensure you replace *cnao_lab_id* with the actual environment variable from your Cloud9 environment.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(service.namespace) = 'cco_lab_id'` to the existing filter. Ensure you replace *cco_lab_id* with the actual environment variable from your Cloud9 environment.
 
 ![image](/images/33_business_transactions/filtered.png)
 
@@ -28,9 +28,9 @@ In this section, you'll discover how to effectively navigate and utilize the Bus
 
 ![image](/images/33_business_transactions/business_transactions_2.png)
 
-The Business Transaction detail page in CNAO offers a distinctive approach to monitoring the health and performance of key business transactions, an essential aspect of your application monitoring strategy.
+The Business Transaction detail page in CCO offers a distinctive approach to monitoring the health and performance of key business transactions, an essential aspect of your application monitoring strategy.
 
-Cloud Native Application Observability incorporates service endpoints within Business Transactions flow maps, representing the entry and exit points for a service instance, which is the entity hosting the service.
+Cisco Cloud Observability incorporates service endpoints within Business Transactions flow maps, representing the entry and exit points for a service instance, which is the entity hosting the service.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Scroll down to see the metrics specific to the business transaction.
 
@@ -40,7 +40,7 @@ When you delve into the details, the Metrics graphs display data including Avera
 
 ## User Defined Business Transactions
 
-As you explored the business transactions associated with your application, you might have observed that only three were automatically identified, and their scope was quite broad. For instance, a business transaction named **HTTP POST** lacks specificity, covering a wide range of transactions and services. Although CNAO typically identifies business transactions automatically, there are instances where you need to define your own, tailored to your monitoring strategy for more meaningful insights.
+As you explored the business transactions associated with your application, you might have observed that only three were automatically identified, and their scope was quite broad. For instance, a business transaction named **HTTP POST** lacks specificity, covering a wide range of transactions and services. Although CCO typically identifies business transactions automatically, there are instances where you need to define your own, tailored to your monitoring strategy for more meaningful insights.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Return to the **HTTP POST** Business Transactions view if you navigated away from it after the previous section.
 
@@ -52,7 +52,7 @@ As you explored the business transactions associated with your application, you 
 
 ![image](/images/33_business_transactions/payment_endpoints.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Enter the Rule name and Business Transaction name, incorporating your lab id in both. To find your lab id, run `echo $cnao_lab_id` in the terminal of your Cloud9 environment. Submit the rule after you are done editing.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Enter the Rule name and Business Transaction name, incorporating your lab id in both. To find your lab id, run `echo $cco_lab_id` in the terminal of your Cloud9 environment. Submit the rule after you are done editing.
 
 ![image](/images/33_business_transactions/create_rule_1.png)
 

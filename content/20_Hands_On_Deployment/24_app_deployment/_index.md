@@ -16,21 +16,21 @@ You will use a Helm Chart to deploy the demo application and override the defaul
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your Cloud9 environment and ensure that a terminal window is open.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Execute the command `kubectl create namespace $cnao_lab_id` in the terminal window to create a new Kubernetes namespace.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Execute the command `kubectl create namespace $cco_lab_id` in the terminal window to create a new Kubernetes namespace.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl create namespace $cnao_lab_id
-namespace/cnao-lab-06-i0xoc created
+cco-lab-06-vm[ec2-user]$ kubectl create namespace $cco_lab_id
+namespace/cco-lab-06-i0xoc created
 ```
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Deploy OpenTelemetry Demo application by overriding default values for the OpenTelemetry Collector exporters. Use the following command:
 
 ```bash 
 helm install \
-    ${cnao_lab_id}-otel-demo open-telemetry/opentelemetry-demo \
+    ${cco_lab_id}-otel-demo open-telemetry/opentelemetry-demo \
     --set components.frontendProxy.service.type=LoadBalancer \
     --values otel-demo-webstore-override.yaml \
-    -n $cnao_lab_id
+    -n $cco_lab_id
 ```
 
 The **otel-demo-webstore-override.yaml** file modifies the default OpenTelemetry settings to ensure telemetry data is directed to the AppDynamics version of the OpenTelemetry Collector, previously deployed on your Kubernetes cluster. View the file's contents using the command `cat otel-demo-webstore-override.yaml`.
@@ -44,35 +44,35 @@ opentelemetry-collector:
         ...
 <... output omitted ...>
 ```
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify OpenTelemetry Demo application deployment using the command `kubectl get pods -n $cnao_lab_id`.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify OpenTelemetry Demo application deployment using the command `kubectl get pods -n $cco_lab_id`.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl get pods -n $cnao_lab_id
+cco-lab-06-vm[ec2-user]$ kubectl get pods -n $cco_lab_id
 NAME                                                              READY   STATUS    RESTARTS   AGE
-cnao-lab-06-i0xoc-otel-demo-accountingservice-64c68558cd-wl765    1/1     Running   0          6m6s
-cnao-lab-06-i0xoc-otel-demo-adservice-76fc57b775-9c68b            1/1     Running   0          6m7s
-cnao-lab-06-i0xoc-otel-demo-cartservice-84cc94999b-glx67          1/1     Running   0          6m6s
-cnao-lab-06-i0xoc-otel-demo-checkoutservice-6448b5998f-rsthx      1/1     Running   0          6m7s
+cco-lab-06-i0xoc-otel-demo-accountingservice-64c68558cd-wl765    1/1     Running   0          6m6s
+cco-lab-06-i0xoc-otel-demo-adservice-76fc57b775-9c68b            1/1     Running   0          6m7s
+cco-lab-06-i0xoc-otel-demo-cartservice-84cc94999b-glx67          1/1     Running   0          6m6s
+cco-lab-06-i0xoc-otel-demo-checkoutservice-6448b5998f-rsthx      1/1     Running   0          6m7s
 
 <... output omitted ...>
 ```
 
 Make sure all pods are displayed in a 'Running' state.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify creation of the Load Balancer using the command `kubectl get services -n $cnao_lab_id | grep 'otel-demo-frontendproxy'`.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify creation of the Load Balancer using the command `kubectl get services -n $cco_lab_id | grep 'otel-demo-frontendproxy'`.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl get services -n $cnao_lab_id | grep 'otel-demo-frontendproxy'
-cnao-lab-06-i0xoc-otel-demo-frontendproxy    LoadBalancer    10.100.118.220    420102547.eu-central-1.elb.amazonaws.com ...
+cco-lab-06-vm[ec2-user]$ kubectl get services -n $cco_lab_id | grep 'otel-demo-frontendproxy'
+cco-lab-06-i0xoc-otel-demo-frontendproxy    LoadBalancer    10.100.118.220    420102547.eu-central-1.elb.amazonaws.com ...
 ```
 
 Make sure that an IP address and service URL are available.
 
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Check the pod logs to make sure they show activity, indicating that tracing data is being transmitted to the collector. Use the command `kubectl logs $(kubectl get pods -n $cnao_lab_id | awk '/adservice/ {print $1}') -n $cnao_lab_id` with *adservice* as a test example.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Check the pod logs to make sure they show activity, indicating that tracing data is being transmitted to the collector. Use the command `kubectl logs $(kubectl get pods -n $cco_lab_id | awk '/adservice/ {print $1}') -n $cco_lab_id` with *adservice* as a test example.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ kubectl logs $(kubectl get pods -n $cnao_lab_id | awk '/adservice/ {print $1}') -n $cnao_lab_id
+cco-lab-06-vm[ec2-user]$ kubectl logs $(kubectl get pods -n $cco_lab_id | awk '/adservice/ {print $1}') -n $cco_lab_id
 
 <... output omitted ...>
 
@@ -89,7 +89,7 @@ cnao-lab-06-vm[ec2-user]$ kubectl logs $(kubectl get pods -n $cnao_lab_id | awk 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Run the command `otel_demo_urls` to obtain all URLs related to the otel demo services.
 
 ```bash
-cnao-lab-06-vm[ec2-user]$ otel_demo_urls
+cco-lab-06-vm[ec2-user]$ otel_demo_urls
 
 OpenTelemetry Demo Application URLs
   The following services will be available once the Load Balancer has completed its Health checks:
@@ -112,22 +112,22 @@ OpenTelemetry Demo Application URLs
 
 ![image](/images/24_app_deploy/features_2.png)
 
-This ensures that the application produces errors for later observation in CNAO.
+This ensures that the application produces errors for later observation in CCO.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CNAO tenant via the **CNAO Tenant URL** and check to see if the OpenTelemetry collector is sending any data to the platform.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CCO tenant via the **CCO Tenant URL** and check to see if the OpenTelemetry collector is sending any data to the platform.
 
-Go to the **Observe** page and apply a filter `EntityStatus = 'active'  && attributes(service.namespace) = 'cnao-lab-06-i0xoc'` to narrow down the display to services specific to your lab environment. Be sure to use your own namespace name, which is stored in the **cnao_lab_id** environment variable.
+Go to the **Observe** page and apply a filter `EntityStatus = 'active'  && attributes(service.namespace) = 'cco-lab-06-i0xoc'` to narrow down the display to services specific to your lab environment. Be sure to use your own namespace name, which is stored in the **cco_lab_id** environment variable.
 
-> **Note:** Retrieve your own service namespace by using the command `echo $cnao_lab_id` in your Cloud9 instance terminal.
+> **Note:** Retrieve your own service namespace by using the command `echo $cco_lab_id` in your Cloud9 instance terminal.
 
 ![image](/images/24_app_deploy/CNAO_deployed.png)
 
-You've successfully configured OpenTelemetry collectors to transmit data to the CNAO platform!
+You've successfully configured OpenTelemetry collectors to transmit data to the CCO platform!
 
-> **Note:** It may take a while for CNAO to display significant data, so now is a great opportunity to take a break!
+> **Note:** It may take a while for CCO to display significant data, so now is a great opportunity to take a break!
 
 <br>
 
 ## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
-In the next section, you'll utilize the Cloud Native Application Observability platform to examine the application's performance.
+In the next section, you'll utilize the Cisco Cloud Observability platform to examine the application's performance.

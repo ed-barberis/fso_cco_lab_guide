@@ -6,16 +6,16 @@ weight = 1
 
 ## Introduction
 
-Generally there are three configuration workflows in CNAO:
+Generally there are three configuration workflows in CCO:
 
 - Infrastructure Monitoring
 - Kubernetes and App Service Monitoring
 - Database Monitoring
 
-To set up your Cloud Native Application Observability, configure Cloud Connections, use OpenTelemetry for instrumentation, and either deploy new OpenTelemetry collectors or configure existing collectors to send data to the Cisco Cloud Native Application Observability backend.
+To set up your Cisco Cloud Observability, configure Cloud Connections, use OpenTelemetry for instrumentation, and either deploy new OpenTelemetry collectors or configure existing collectors to send data to the Cisco Cloud Observability backend.
 
 ### Infrastructure Monitoring Installation Overview
-Based on your current public cloud deployments, you'll need to set up a cloud connection to pull data from cloud sources like AWS Cloud Watch, MS Azure Monitor, or Google Cloud Platform. This helps you gain insights into how your cloud infrastructure impacts application performance. To set up your public cloud platform with CNAO, you'll need to supply credentials and any other necessary information for data retrieval.
+Based on your current public cloud deployments, you'll need to set up a cloud connection to pull data from cloud sources like AWS Cloud Watch, MS Azure Monitor, or Google Cloud Platform. This helps you gain insights into how your cloud infrastructure impacts application performance. To set up your public cloud platform with CCO, you'll need to supply credentials and any other necessary information for data retrieval.
 
 Additionally you can setup Prometheus or Host Monitoring Data sources.
 

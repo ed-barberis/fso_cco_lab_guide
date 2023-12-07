@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "My CNAO Lab"
+title = "My CCO Lab"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"
@@ -48,7 +48,7 @@ themeVariant = "mine"
 home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-graduation-cap'></i> CNAO Documentation"
+name = "<i class='fas fa-graduation-cap'></i> CCO Documentation"
 url = "https://docs.appdynamics.com/fso/cloud-native-app-obs/en/"
 weight = 10
 

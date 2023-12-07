@@ -28,6 +28,6 @@ By addressing these challenges, Alex aims to develop a robust observability stra
 
 ## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
-We'll explore how **Cisco Cloud Native Application Observability (CNAO)** allows Alex to rest easy, knowing his applications are well-monitored.
+We'll explore how **Cisco Cloud Observability (CCO)** allows Alex to rest easy, knowing his applications are well-monitored.
 
 <br>
