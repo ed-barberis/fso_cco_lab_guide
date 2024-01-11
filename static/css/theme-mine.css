@@ -39,7 +39,7 @@ body, p, h1, h2, h3, h4, h5, h6 { font-family:CiscoSans }
 .searchbox { background: transparent; border-color: #fff;}
 
 #sidebar {
-    background-color: #20272b;
+    background-color: #1b1e1f;
     position: fixed;
     top: 0;
     width: 300px;
@@ -68,3 +68,5 @@ a {
 a:hover {
     color: #768cc0;
 }
+
+.fso-title { color: white; font-size: 1.25em; font-weight: 500;}
