@@ -16,6 +16,22 @@ You will use a Helm Chart to deploy the demo application and override the defaul
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your Cloud9 environment and ensure that a terminal window is open.
 
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Add the OpenTelemetry Helm Chart repository using the `helm repo add` command.
+
+```bash
+cco-lab-06-vm[ec2-user]$ helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts/
+"open-telemetry" has been added to your repositories
+```
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Verify the installed charts using the `helm repo list` command.
+
+```bash
+cco-lab-06-vm[ec2-user]$ helm repo list
+NAME                            URL                                                                   
+open-telemetry                  https://open-telemetry.github.io/opentelemetry-helm-charts            
+appdynamics-cloud-helmcharts    https://appdynamics.jfrog.io/artifactory/appdynamics-cloud-helmcharts/
+```
+
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Execute the command `kubectl create namespace $cco_lab_id` in the terminal window to create a new Kubernetes namespace.
 
 ```bash

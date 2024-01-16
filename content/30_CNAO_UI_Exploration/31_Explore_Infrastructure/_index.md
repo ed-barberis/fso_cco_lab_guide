@@ -139,7 +139,7 @@ The Efficiency and Risk Profiler evaluates Kubernetes workloads for performance 
 
 Analysis results for deployments consistently feature the Analysis Summary, Reliability Risk, and Efficiency Rate. However, specific Opportunities and Cautions are provided only when sufficient data is available for an accurate assessment.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **Health and Alerting** panel on the righ, the **Security** section displays vulnerabilities in your workloads and services. The Cisco Secure Application uses **Kenna** and **CVSS** scores to indicate these vulnerabilities.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **Health and Alerting** panel on the right, the **Security** section displays vulnerabilities in your workloads and services. The Cisco Secure Application uses **Kenna** and **CVSS** scores to indicate these vulnerabilities.
 
 The panel displays an entity overall risk level, considering factors like vulnerabilities, Kubernetes misconfigurations, and its impact on the business transaction's risk score, which also factors in business impact and data leakage risks. Learn more about Kenna vulnerability scoring [here](https://help.kennasecurity.com/hc/en-us/articles/360026160592-Vulnerability-Scoring-in-Cisco-Vulnerability-Management).
 

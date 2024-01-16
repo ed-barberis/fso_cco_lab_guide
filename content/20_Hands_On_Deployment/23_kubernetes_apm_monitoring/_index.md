@@ -59,7 +59,6 @@ cco-lab-06-vm[ec2-user]$ helm repo add appdynamics-cloud-helmcharts https://appd
 ```bash
 cco-lab-06-vm[ec2-user]$ helm repo list
 NAME                            URL                                                                   
-open-telemetry                  https://open-telemetry.github.io/opentelemetry-helm-charts            
 appdynamics-cloud-helmcharts    https://appdynamics.jfrog.io/artifactory/appdynamics-cloud-helmcharts/
 ```
 
