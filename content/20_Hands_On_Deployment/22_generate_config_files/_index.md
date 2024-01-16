@@ -28,6 +28,8 @@ Use this value for both the credential set name in the first field and the uniqu
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **ENABLE ADDITIONAL CONFIGURATIONS** section, ensure that **Cluster Collector**, **Infra Collector**, **Log Collector Agent**, and **Security Monitoring** are all selected, choosing *Linux* for the OS option where applicable.</span>
 
+> **Note:** If **Secure Application** is NOT enabled for your CCO tenant, you can safely ignore the Lab Guide instructions related to **Security** and **Security Monitoring**.
+
 Below is an example showcasing both values configured. Make sure to use your own data in the input fields.
 
 ![image](/images/22_k8s_and_app/k8s_app_configure.png)
