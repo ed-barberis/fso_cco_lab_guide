@@ -92,6 +92,6 @@ By skillfully navigating the APM domain, you've successfully uncovered the root 
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
 In the upcoming section, you'll continue exploring the APM domain, focusing on observing and configuring Business Transactions (BTs) entity data, while also extracting key business metrics.

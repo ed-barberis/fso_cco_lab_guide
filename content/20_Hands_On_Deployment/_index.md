@@ -45,7 +45,7 @@ To successfully deploy Kubernetes Observability, you need to install a set of Ku
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
 You'll dive right in by setting up your lab environment and integrating instrumentation into the application.
 

@@ -25,7 +25,7 @@ In summary, effective observability is crucial for managing the complexities of 
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
 Next, we will introduce you to Alex, who cares about using best-in-class tools to monitor the company's cloud-native applications and environments.
 

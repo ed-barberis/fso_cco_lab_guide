@@ -29,6 +29,7 @@ In this workshop you will explore how Cisco Cloud Observability (CCO) can be use
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
-You'll delve into the details of monitoring cloud-native applications and discover how Cisco Cloud Observability aims to address the associated challenges.
+In the next section, you'll delve into the details of monitoring cloud-native applications and discover how Cisco Cloud Observability aims to address the associated challenges.
+On the right-hand side of the lab guide, click on the **>** arrow in the navigation bar to continue.

@@ -60,6 +60,6 @@ You've successfully created the configuration files needed for setting up Kubern
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
 In the following section, you'll utilize the generated files to implement the monitoring setup.

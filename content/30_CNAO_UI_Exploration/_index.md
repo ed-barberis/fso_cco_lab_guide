@@ -12,7 +12,7 @@ In this journey through the Cisco Cloud Observability (CCO) platform, you will f
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
 You navigate through the CCO interface to explore the application you set up earlier, focusing on the domains that are visible and connected in the platform. Starting with the Kubernetes domain, you will learn how to monitor and detect issues related to the Kubernetes cluster in which your application is running.
 
