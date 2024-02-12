@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "My CCO Lab"
+title = "FSO CCO Compentency Workshop Lab Guide"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"
@@ -15,9 +15,9 @@ enableEmoji = true
 # See the config.toml file from this documentation site to have an example.
 #editURL = ""
 # Author of the site, will be used in meta information
-author = "Wayne Brown"
+author = "Ed Barberis"
 # Description of the site, will be used in meta information
-description = "Cisco AppDynamics serverless workshop"
+description = "FSO Cisco Cloud Observability (CCO) Competency Workshop."
 # Shows a checkmark for visited pages on the menu
 showVisitedLinks = true
 # Disable search function. It will hide search bar
@@ -49,7 +49,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-graduation-cap'></i> CCO Documentation"
-url = "https://docs.appdynamics.com/fso/cloud-native-app-obs/en/"
+url = "https://docs.appdynamics.com/observability/cisco-cloud-observability/en/"
 weight = 10
 
 [markup]
@@ -62,9 +62,9 @@ order = [".jpg$", ".gif$", ".png$"]
 
 [[deployment.targets]]
 name = "aws-s3"
-URL = "s3://lt-cnao-fsolabs-net-static-site-temp-s3bucketroot-z9volf75yl0l?region=us-east-1"
+URL = "s3://lt-cco-fsolabs-net-static-site-templa-s3bucketroot-ontqyepz0idn?region=us-east-1"
 
-cloudFrontDistributionID = "E1QG4IA2QYEME4"
+cloudFrontDistributionID = "E17A40E6NF82P9"
 
 [[deployment.matchers]]
 # Cache static assets for 1 year.
