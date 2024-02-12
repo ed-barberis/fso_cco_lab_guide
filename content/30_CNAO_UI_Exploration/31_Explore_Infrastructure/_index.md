@@ -6,7 +6,7 @@ weight = 1
 
 ## Introduction
 
-In the area of cloud-native applications, the Kubernetes cluster serves as a crucial foundation for your deployed services. Familiarizing yourself with CCO's monitoring capabilities will give you a comprehensive overview of the [Kubernetes domain and its associated entities](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/kubernetes-and-app-service-monitoring/entities/kubernetes-entities) such as namespaces, workloads, pods, and containers. This introduction to monitoring with CCO will guide you through the process of observing the health, performance, and intricacies of your Kubernetes cluster. 
+In the area of cloud-native applications, the Kubernetes cluster serves as a crucial foundation for your deployed services. Familiarizing yourself with CCO's monitoring capabilities will give you a comprehensive overview of the [Kubernetes domain and its associated entities](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/kubernetes-and-app-service-monitoring/kubernetes-entities) such as namespaces, workloads, pods, and containers. This introduction to monitoring with CCO will guide you through the process of observing the health, performance, and intricacies of your Kubernetes cluster. 
 
 You will learn about various entities and their relationships within the Kubernetes domain of the CCO platform.
 
@@ -19,7 +19,7 @@ You will learn to identify and analyze the important metrics, understand the rel
 
 ![image](/images/31_explore_ui/ui_cluster_initial.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(k8s.cluster.name) = 'cco_lab_id'` to the existing filter. Ensure you replace *cco_lab_id* with the actual environment variable from your Cloud9 environment.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(k8s.cluster.name) = 'cco_k8s_apm_name'` to the existing filter. Ensure you replace *cco_k8s_apm_name* with the actual environment variable from your Cloud9 environment, which is the name of your EKS Cluster converted to lowercase.
 
 ![image](/images/31_explore_ui/ui_cluster_filtered.png)
 
@@ -32,7 +32,7 @@ In the Observe and list views, filters allow you to tailor your display to show 
 - Tags
 - Metrics
 
-Learn more about filters by navigating [here](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/observe-ui-overview/filters).
+Learn more about filters by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/navigate-cisco-cloud-observability/observe-ui-overview/filters).
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click on your cluster's name to view a detailed overview of its performance.
 
@@ -61,7 +61,7 @@ Cost Insights supports the following environments:
 - AWS
 - Azure
 
-Learn more about Cost Insights by navigating [here](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/extend-cloud-native-application-observability/cloud-native-application-observability-modules/cost-insights).
+Learn more about Cost Insights by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/extend-cisco-cloud-observability/cisco-cloud-observability-modules/cost-insights).
 
 ### Health Violation Timeline
 Health rules enable you to define parameters that represent normal or expected operational conditions in your environment, such as CPU Utilization for a host. By default, certain health rules are pre-configured for monitored domains and entities.
@@ -76,7 +76,7 @@ A health rule violation happens when the set critical or warning conditions of t
 
 > **Note:** Your screen might look a bit different from the image shown above.
 
-Learn more about Health Rules by navigating [here](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/monitor-entity-health/health-rules).
+Learn more about Health Rules by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/monitor-entity-health/health-rules).
 
 ### Namespaces Entity
 The Namespaces page serves as a hub for both real-time and historical performance data of Kubernetes namespaces, offering:
@@ -94,7 +94,7 @@ The Namespaces page serves as a hub for both real-time and historical performanc
 
 ![image](/images/31_explore_ui/6_observe_namespace.png)
 
-Learn more about Namespaces entity by navigating [here](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/kubernetes-and-app-service-monitoring/entities/kubernetes-entities/namespaces).
+Learn more about Namespaces entity by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/kubernetes-and-app-service-monitoring/kubernetes-entities/namespaces).
 
 ### Logs
 Logs are crucial for troubleshooting as they provide detailed insights into actions, errors, warnings, unexpected conditions, and various other events.
@@ -107,12 +107,13 @@ Logs are crucial for troubleshooting as they provide detailed insights into acti
 
 ![image](/images/31_explore_ui/8_observe_logs_detail.png)
 
-Learn more about troubleshooting with Logs by navigating [here](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/kubernetes-and-app-service-monitoring/log-collection/troubleshoot-with-logs).
+Learn more about troubleshooting with Logs by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/kubernetes-and-app-service-monitoring/log-collection/troubleshoot-with-logs).
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click on the namespace name displayed in the breadcrumbs at the top of the interface, and return back to the *Namespace* entity.
 
 ![image](/images/31_explore_ui/9_go_back.png)
 
+<!---
 ### Workloads Entity
 The Workloads page serves as a hub for both real-time and historical performance data of Kubernetes workloads. In Kubernetes, a workload represents an application in operation, with examples including Deployments and ReplicaSets.
 
@@ -146,6 +147,7 @@ The panel displays an entity overall risk level, considering factors like vulner
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; As you scroll down, you'll see various metrics and statuses providing an overview of the workload's performance.
 
 ![image](/images/31_explore_ui/12_workloads_details_2.png)
+--->
 
 ### Pods Entity
 You can use Pods entity to:
@@ -170,7 +172,7 @@ The Containers page displays real-time and historical performance data for Kuber
 
 ### Cloud Entities
 
-After you [Configure Cloud Connections](https://docs.appdynamics.com/fso/cloud-native-app-obs/en/cloud-and-infrastructure-monitoring/aws-cloud-observability/configure-aws-cloud-connections), you can also monitor cloud specific services such as API Gateways, Load Balabncers, Elastic Container Services, and hosts in AWS.
+After you [Configure Cloud Connections](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/cloud-and-infrastructure-monitoring/aws-cloud-observability/configure-aws-cloud-connections), you can also monitor cloud specific services such as API Gateways, Load Balabncers, Elastic Container Services, and hosts in AWS.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the **Host** entity from the container relationship panel to inspect the single host where the container is deployed.
 
@@ -194,6 +196,6 @@ You've explored Kubernetes domain entities in the CCO interface, learning to ide
 
 <br>
 
-## Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
+## Coming Up Next <span style="color: #143c76;"><i class='fas fa-cog fa-spin fa-sm'></i></span>&nbsp;
 
 Although you may have noticed the Service entities in the UI, you haven't explored them yet. This exploration, focusing on application performance, is what you'll tackle next.

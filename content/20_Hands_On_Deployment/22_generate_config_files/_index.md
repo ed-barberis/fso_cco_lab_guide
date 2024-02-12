@@ -22,13 +22,26 @@ After you log in, you'll arrive at the **Observe** page, which serves as the lau
 
 Here, you'll generate your own set of credentials, which will be used for setting up Kubernetes and APM data collectors.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In your Cloud9 environment's terminal window, run the command `echo $cco_k8s_apm_name` to retrieve the value of the **cco_k8s_apm_name** environment variable. 
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In your Cloud9 environment's terminal window, run the *echo* command to retrieve the value of the **cco_k8s_apm_name** environment variable.
 
-Use this value for both the credential set name in the first field and the unique name of the Kubernetes cluster in the second field. </span>
+```bash
+echo $cco_k8s_apm_name
+```
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **ENABLE ADDITIONAL CONFIGURATIONS** section, ensure that **Cluster Collector**, **Infra Collector**, **Log Collector Agent**, and **Security Monitoring** are all selected, choosing *Linux* for the OS option where applicable.</span>
+```bash
+# example
+$ echo $cco_k8s_apm_name
+cco-lab-01-nrmf4-eks
+```
 
-> **Note:** If **Secure Application** is NOT enabled for your CCO tenant, you can safely ignore the Lab Guide instructions related to **Security** and **Security Monitoring**.
+You will use this value for both the credential set name in the first field and the unique name of the Kubernetes cluster in the second field. </span>
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **ENABLE ADDITIONAL CONFIGURATIONS** section, ensure that 
+**Cluster Collector**, **Infra Collector**, and **Log Collector Agent** are all selected, choosing **Linux** for the OS option where applicable.  
+
+If **Security Monitoring** is also present, select that as well.</span>
+
+> **Note:** If **Secure Application** is NOT enabled for your CCO tenant, it will not show up in the configurations section, and you can safely ignore the Lab Guide instructions related to **Security** and **Security Monitoring**.
 
 Below is an example showcasing both values configured. Make sure to use your own data in the input fields.
 
@@ -48,7 +61,7 @@ Two files will be produced based on the new credential set. The first, **operato
 ## Upload the Configuration Files to your Cloud9 instance
 Having successfully generated the essential configuration files for monitoring the application environment with CCO, your next step is to upload these files to your Cloud9 lab environment for use.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the Cloud9 left sidebar, select the top-level directory labeled "CCO-Lab-*user-info*-Cloud9 - /home/ec2-user." Then, navigate to the **File** menu and choose the **Upload Local Files** option. </span>
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the Cloud9 left sidebar, **select the top-level directory** labeled "CCO-Lab-*user-info*-Cloud9 - /home/ec2-user." Then, navigate to the **File** menu and choose the **Upload Local Files** option. </span>
 
 ![image](/images/22_k8s_and_app/c9_upload_local_files.png)
 
