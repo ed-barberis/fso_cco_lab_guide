@@ -44,12 +44,12 @@ Helm charts. This requires a trusted TLS certificate. The certificate manager au
 (cert-manager) onto the cluster.
 
 ```bash
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.2/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.3/cert-manager.yaml
 ```
 
 ```bash
 # example
-$ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.2/cert-manager.yaml
+$ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.3/cert-manager.yaml
 namespace/cert-manager created
 customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io created
 customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io created
@@ -193,18 +193,29 @@ global:
     tokenUrl: https://appd-channel.observe.appdynamics.com/auth/5bcb9501-4f1f-4f2b-8366-52ace9aa7bb4/default/oauth2/token
 appdynamics-cloud-k8s-monitoring:
   install:
+    clustermon: true
+    defaultInfraCollectors: true
     logCollector: true
   clustermonConfig:
+    os: linux
     events:
       enabled: true
       severityToExclude: []
       reasonToExclude: []
       severeGroupByReason: []
+  containermonConfig:
+    os:
+      - linux
+  servermonConfig:
+    os:
+      - linux
   logCollectorConfig:
+    os:
+      - linux
     container:
       logging:
         level: debug
-      conditionalConfigs: # renamed from conditions -> conditionalConfigs
+      conditionalConfigs:
         - condition:
             operator: contains
             key: kubernetes.pod.name
@@ -216,7 +227,7 @@ appdynamics-cloud-k8s-monitoring:
                 pattern: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg trace_id=%X{trace_id} span_id=%X{span_id} trace_flags=%X{trace_flags} %n"
             multiLineMatch: after
             multiLinePattern: '^\d{4}-\d{2}-\d{2}'
-            multiLineNegate: true # default is false
+            multiLineNegate: true
       dropFields: ["agent", "stream", "ecs", "input", "orchestrator", "k8s.annotations.appdynamics", "k8s.labels", "k8s.node.labels", "cloud"]
       batchSize: 1000
       maxBytes: 1000000
@@ -225,6 +236,9 @@ appdynamics-otel-collector:
   clientSecret: dtsUfjdNOS7jpiAJ8aCBFL1mvCRgpamjhxqho973Uvo
   endpoint: https://appd-channel.observe.appdynamics.com/data
   tokenUrl: https://appd-channel.observe.appdynamics.com/auth/5bcb9501-4f1f-4f2b-8366-52ace9aa7bb4/default/oauth2/token
+  enableNetworkMonitoring: true
+appdynamics-network-monitoring:
+  enabled: true
 ```
 
 Observe that **logCollector** is enabled for installation; which comes with specific conditional configuration settings 
@@ -269,10 +283,9 @@ The chart installs the following components
         Enabled: false
         Description: Installs the DB Collector to collect metrics and monitors the Databases specified in DbConfigs
 
-6) Cisco Cloud Observability Network Collector (BETA)
-        Enabled: false
-        Description: Installs the Network Collector, which is currently in beta. Review the following terms: 
-                $ helm show readme appdynamics-cloud-helmcharts/appdynamics-collectors
+6) Cisco Cloud Observability Network Collector
+        Enabled: true
+        Description: Installs the Network Collector, to monitor network performance for applications and infrastructure
 
 <... output omitted ...>
 ```
@@ -288,16 +301,20 @@ kubectl get pods -n appdynamics
 # example
 $ kubectl get pods -n appdynamics
 NAME                                                              READY   STATUS    RESTARTS   AGE
-appdynamics-collectors-appdynamics-clustermon-9b9f795bf-6fhz9     1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-inframon-smpdt                 1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-inframon-xltxz                 1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-log-collector-mjzql            1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-log-collector-xmmlr            1/1     Running   0          5m26s
-appdynamics-collectors-ds-appdynamics-otel-collector-rhl8c        1/1     Running   0          5m26s
-appdynamics-collectors-ds-appdynamics-otel-collector-xh9ts        1/1     Running   0          5m26s
-appdynamics-operators-appdynamics-cloud-operator-5986ccc4b9zn8h   2/2     Running   0          150m
-appdynamics-operators-appdynamics-smartagent-688fc6fc96-hp5sj     1/1     Running   0          150m
-appdynamics-operators-opentelemetry-operator-6b4f58b4cb-zgfrn     2/2     Running   0          150m
+appdynamics-collectors-appdynamics-clustermon-b44468ddd-fl5tt     1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-inframon-5cxhw                 1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-inframon-h4vcx                 1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-log-collector-6vjdh            1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-log-collector-t8g5p            1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-network-monitoring-k8s-6dkhl   2/2     Running   0          5m26s
+appdynamics-collectors-appdynamics-network-monitoring-kerndh7ds   1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-network-monitoring-kernzw6sb   1/1     Running   0          5m26s
+appdynamics-collectors-appdynamics-network-monitoring-reduqzp6h   1/1     Running   0          5m26s
+appdynamics-collectors-ds-appdynamics-otel-collector-c9wgs        1/1     Running   0          5m26s
+appdynamics-collectors-ds-appdynamics-otel-collector-nhmxl        1/1     Running   0          5m26s
+appdynamics-operators-appdynamics-cloud-operator-66f7cf766bg79s   2/2     Running   0          150m
+appdynamics-operators-appdynamics-smartagent-55b85f94f7-schgl     1/1     Running   0          150m
+appdynamics-operators-opentelemetry-operator-6b4f58b4cb-w9jgv     2/2     Running   0          150m
 ```
 
 Make sure the status of all pods is **Running**.
