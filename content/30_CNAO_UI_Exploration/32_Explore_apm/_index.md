@@ -33,21 +33,23 @@ CCO enables you to view data detail in two ways:
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CCO tenant via the **CCO Tenant URL**.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Go to the **Observe** page and click the **Services** entity within the Application Performance Monitoring domain.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Go to the **Observe** page and adjust the view to specifically target your cluster. Appending `&& attributes(service.namespace) = 'cco_lab_id'` to the existing filter. Ensure you replace *cco_lab_id* with the actual environment variable from your Cloud9 environment.
 
 ![image](/images/32_explore_apm/initial.png)
 
 > **Note:** You can adjust the time range in the upper-right corner, which will update the data displayed in the views to reflect the chosen time period.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(service.namespace) = 'cco_lab_id'` to the existing filter. Ensure you replace *cco_lab_id* with the actual environment variable from your Cloud9 environment.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click the **Services** entity within the Application Performance Monitoring domain.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; To filter only the services with errors, add `&& metrics('apm:errors_min') > 0` to the current filter.
 
 ![image](/images/32_explore_apm/filtered.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Change the view from **Flow** to **List** to examine each service's metrics.
+The widgets and the flow map view should adjust so you can focus only on services with errors.
 
-![image](/images/32_explore_apm/listview.png)
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Double-click the **cartservice** in the flow map.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click on **cartservice** in the Entity Name column to select it from the list of services.
+You should see a single service entity along with a flow map specifically for the **cartservice**.
 
 ![image](/images/32_explore_apm/service_details.png)
 
@@ -61,15 +63,19 @@ In the Service detail view, you can easily check if the specific service has a h
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Select the **Related Traces** button in the right-hand Service panel.
 
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Sort the traces by duration by clicking on the **Duration** column heading, then select the first trace by clicking its **Trace ID**.
+
 ![image](/images/32_explore_apm/traces.png)
 
 Cisco Cloud Observability offers detailed insights into OpenTelemetry Traces, which are transactions through your system. Each Trace comprises multiple Spans, each representing a service or unit involved in the transaction. Traces are crucial for identifying the root causes of errors or performance issues in a distributed system.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Sort the traces by duration by clicking on the **Duration** column heading, then select the longest trace by clicking its **Trace ID**.
+Note the last column which indicates that most of the traces have errors.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; The Trace properties panel displays key details like Entry Service, Start Time, and Error. The **Trace Flowmap** visually represents the transaction flow through services, with each node labeled by service name. Clicking a node reveals related span details in the Properties panel and highlights the span in the request flow timeline.
 
 ![image](/images/32_explore_apm/trace_details.png)
 
-The Trace properties panel displays key details like Entry Service, Start Time, and Error. The **Trace Flowmap** visually represents the transaction flow through services, with each node labeled by service name. Clicking a node reveals related span details in the Properties panel and highlights the span in the request flow timeline.
+
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Scroll down to view the **Request Flow** timeline.
 
@@ -77,9 +83,13 @@ The Trace properties panel displays key details like Entry Service, Start Time, 
 
 The timeline illustrates the trace flow, showing span and service names within each hierarchy. Clicking a span reveals its Trace properties, OpenTelemetry attributes, and FSO Platform tags in the Properties panel. Purple highlights indicate the selected trace flow and span duration, while red highlights signal an error.
 
+> This types of graphs are also referred to as flamegraphs.
+
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Examine the request flow timeline to pinpoint the spans and services with the longest execution times. What insights did you gather?
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Select the **Related Logs** option in the right Trace Overview panel.
+
+> If you don't see the **Related Logs** option, because you were examining the request flow, navigate back to the traces view, and select the same trace again.
 
 ![image](/images/32_explore_apm/related_logs_1.png)
 

@@ -49,34 +49,17 @@ The right-hand menu consolidates data from various views, offering a quick summa
 
 ![image](/images/31_explore_ui/ui_cluster_time_select.png)
 
-### Cost Insights
-The Cost Insights module on the Cisco Full Stack Observability (FSO) platform extends CCO by analyzing cloud and cloud-native workloads. It generates detailed cost data for infrastructure workloads and services and integrates this information as a new metric into the entity-centric pages of CCO.
-
-![image](/images/31_explore_ui/ui_cost_insights.png)
-
-Cost Insights offers detailed cost data and analysis, enabling leaders and Financial Operations (FinOps) teams to comprehend and control expenses related to applications and infrastructure in the cloud.
-
-Cost Insights supports the following environments:
-
-- AWS
-- Azure
-
-Learn more about Cost Insights by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/extend-cisco-cloud-observability/cisco-cloud-observability-modules/cost-insights).
 
 ### Health Violation Timeline
 Health rules enable you to define parameters that represent normal or expected operational conditions in your environment, such as CPU Utilization for a host. By default, certain health rules are pre-configured for monitored domains and entities.
 
 A health rule violation happens when the set critical or warning conditions of that rule are met. You can see the details of these violations for a specific entity or any health rule in the Health Violation Timeline.
 
-
-
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Expand the **Health Violations** window and select a time on the chart to view **Child Entities with Violations**. Click **View Details** to navigate to the associated namespace entity with health rule violation.
-
 ![image](/images/31_explore_ui/4_expand_health_violation.png)
 
 > **Note:** Your screen might look a bit different from the image shown above.
 
-Learn more about Health Rules by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/monitor-entity-health/health-rules).
+Learn more about Health Rules by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/entity-health-monitoring/health-rules).
 
 ### Namespaces Entity
 The Namespaces page serves as a hub for both real-time and historical performance data of Kubernetes namespaces, offering:
@@ -86,7 +69,12 @@ The Namespaces page serves as a hub for both real-time and historical performanc
 - Summaries of changes in Kubernetes Configurations for each namespace.
 - Kubernetes Events linked to each namespace.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click the namespace entity in the list.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the RELATIONSHIP panel select the **Namespace** entity.
+
+Only the namespaces deployed to your Kubernetes cluster are shown here, because the relationship between the entities is pertained.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click the namespace to which your app was deployed.
 
 ![image](/images/31_explore_ui/5_select_namespace.png)
 
@@ -103,25 +91,28 @@ Logs are crucial for troubleshooting as they provide detailed insights into acti
 
 ![image](/images/31_explore_ui/7_observe_logs.png)
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the list of logs associated with the namespace, select one to view the details, which are then shown on the right-hand side.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Change to **Natural Language** search mode, and in the search bar, enter a query like `of which messages including "recommendation_server.py"`.
 
+> You can play around with different natural language search prompts.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Select one of the log messages from the list, and observe the log details in the panel on the right.
 ![image](/images/31_explore_ui/8_observe_logs_detail.png)
 
-Learn more about troubleshooting with Logs by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/kubernetes-and-app-service-monitoring/log-collection/troubleshoot-with-logs).
+Learn more about troubleshooting with Logs by navigating [here](https://docs.appdynamics.com/observability/cisco-cloud-observability/en/navigate-cisco-cloud-observability/explore-melt-data/explore-logs).
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click on the namespace name displayed in the breadcrumbs at the top of the interface, and return back to the *Namespace* entity.
 
 ![image](/images/31_explore_ui/9_go_back.png)
 
-<!---
+
 ### Workloads Entity
 The Workloads page serves as a hub for both real-time and historical performance data of Kubernetes workloads. In Kubernetes, a workload represents an application in operation, with examples including Deployments and ReplicaSets.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Select the *Workloads* entity from the relationships panel to display all workloads. Observe that these workloads are linked to a specific namespace, indicated at the top of the screen, due to your access to the Workload entity via the Namespace entity.
 
-![image](/images/31_explore_ui/10_workloads_1.png)
+![image](/images/31_explore_ui/workloads_01.png)
 
-
+<!---
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click on **View Unhealthy Workloads** to apply a filter that displays only those Workloads in a *Warning* or *Critical* state.
 
 ![image](/images/31_explore_ui/11_workloads_filter.png)
@@ -156,12 +147,21 @@ You can use Pods entity to:
 - Determine if pods are experiencing restarts or crashing issues that impact the availability.
 - Determine if there are any changes in Kubernetes Configurations (ConfigMaps and Secrets) at pods level.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the related **Pod** entities from the **RELATIONSHIPS** panel.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the related **Pods** entity from the **RELATIONSHIPS** panel.
 
 ![image](/images/31_explore_ui/13_pods.png)
 
 
 ### Containers Entity
+
+The Containers page displays real-time and historical performance data for Kubernetes containers, with metrics sourced from cAdvisor via the Kubelet API. This page highlights resource utilization metrics for your containerized applications.
+
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Click the **Container** entity. Using this entity menu, you can concentrate on the performance metrics specific to the related container.
+
+![image](/images/31_explore_ui/14_containers.png)
+
+<!---
+### Hosts Entity
 
 The Containers page displays real-time and historical performance data for Kubernetes containers, with metrics sourced from cAdvisor via the Kubelet API. This page highlights resource utilization metrics for your containerized applications.
 
@@ -193,6 +193,7 @@ In Cisco Cloud Observability (CCO), you can observe how Amazon Application, Clas
 ![image](/images/31_explore_ui/cloud_3.png)
 
 You've explored Kubernetes domain entities in the CCO interface, learning to identify issues related to Kubernetes infrastructure, observing vulnerability detection for workloads, and understanding the relationship between Kubernetes entities and those managed by Cloud Connections like AWS.
+--->
 
 <br>
 

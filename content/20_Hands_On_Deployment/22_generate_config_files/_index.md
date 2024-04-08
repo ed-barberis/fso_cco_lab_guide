@@ -14,7 +14,9 @@ The Cisco Cloud Observability (CCO) platform offers a guided, step-by-step metho
 
 After you log in, you'll arrive at the **Observe** page, which serves as the launching pad for the monitoring tasks you will perform later.
 
-![image](/images/22_k8s_and_app/cnao_initial.png)
+![image](/images/31_explore_ui/ui_initial.png)
+
+> **Note:** Your view might be different from the above image, because you are using a shared tenant.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Use the left navigation pane and navigate to the **Kubernetes and APM** menu. </span>
 
@@ -34,7 +36,7 @@ $ echo $cco_k8s_apm_name
 cco-lab-01-nrmf4-eks
 ```
 
-You will use this value for both the credential set name in the first field and the unique name of the Kubernetes cluster in the second field. </span>
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp;Use the value of **cco_k8s_apm_name** for both the credential set name in the first field and the unique name of the Kubernetes cluster in the second field. </span>
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **ENABLE ADDITIONAL CONFIGURATIONS** section, ensure that 
 **Cluster Collector**, **Infra Collector**, and **Log Collector Agent** are all selected, choosing **Linux** for the OS option where applicable.  

@@ -15,13 +15,13 @@ In this section, you'll discover how to effectively navigate and utilize the Bus
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Navigate to your CCO tenant via the **CCO Tenant URL**.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Go to the **Observe** page and click the **Business Tranasctions** entity within the Application Performance Monitoring domain.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Go to the **Observe** page and click the **Business Transactions** entity within the Application Performance Monitoring domain.
 
-![image](/images/33_business_transactions/initial.png)
+![image](/images/33_business_transactions/initial_bt.png)
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Adjust the view to specifically target your cluster by appending `&& attributes(service.namespace) = 'cco_lab_id'` to the existing filter. Ensure you replace *cco_lab_id* with the actual environment variable from your Cloud9 environment.
 
-![image](/images/33_business_transactions/filtered.png)
+![image](/images/33_business_transactions/filtered_bt.png)
 
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Choose the **HTTP Post** Business Transaction from the list.
@@ -50,9 +50,13 @@ As you explored the business transactions associated with your application, you 
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the **paymentservice** Service Entity, scroll down to select the **grpc.oteldemo.PaymentService/Charge** endpoint and click on **Create BT Detection Rule** in the right panel.
 
+> **Note:** The name of the endpoint might in some cases be **grpc.oteldemo.PaymentService/C**.
+
 ![image](/images/33_business_transactions/payment_endpoints.png)
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Enter the Rule name and Business Transaction name, incorporating your lab id in both. To find your lab id, run `echo $cco_lab_id` in the terminal of your Cloud9 environment. Submit the rule after you are done editing.
+
+> **Note:** Because you cannot use the lab id directly as the rule name, you can simply use just the lab number as part of the name.
 
 ![image](/images/33_business_transactions/create_rule_1.png)
 
@@ -60,12 +64,14 @@ As you explored the business transactions associated with your application, you 
 
 ![image](/images/33_business_transactions/create_rule_2.png)
 
+> **Note:** It might take some time for Business Transaction to become available.
+
 In the details view, you can examine the performance of the specific business transaction.
 
 ## Business Metrics
 Business Transactions can be linked with business metrics, enabling you to monitor the impact of application performance on business outcomes. Configure and visualize key metrics like Average Cart Value, Revenue Loss, Total Carts Sold, and Total Cart Value, and conduct segment analysis.
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; In the details view of your newly created business transaction, navigate to the **Business Metrics** section and choose **Configure Business Metrics**.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Return to the **HTTP POST** Business Transaction, navigate to the **Business Metrics** section and choose **Configure Business Metrics**.
 
 ![image](/images/33_business_transactions/business_metrics_0.png)
 
@@ -80,11 +86,8 @@ Business Transactions can be linked with business metrics, enabling you to monit
 ![image](/images/33_business_transactions/business_metrics_2.png)
 
 
-<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Save the business metric, then navigate back to your business transaction using any preferred method.
+<span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Save the business metric, then navigate back to your business transaction.
 
-![image](/images/33_business_transactions/business_metrics_3.png)
-
-You will notice that the business metrics have started to be collected.
 
 <span style="color: #143c76;"><i class='fas fa-circle fa-sm'></i></span>&nbsp; Open the business transaction details and navigate to **Business Metrics**.
 

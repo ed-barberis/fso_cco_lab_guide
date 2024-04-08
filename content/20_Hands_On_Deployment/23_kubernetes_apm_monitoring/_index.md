@@ -306,10 +306,6 @@ appdynamics-collectors-appdynamics-inframon-5cxhw                 1/1     Runnin
 appdynamics-collectors-appdynamics-inframon-h4vcx                 1/1     Running   0          5m26s
 appdynamics-collectors-appdynamics-log-collector-6vjdh            1/1     Running   0          5m26s
 appdynamics-collectors-appdynamics-log-collector-t8g5p            1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-network-monitoring-k8s-6dkhl   2/2     Running   0          5m26s
-appdynamics-collectors-appdynamics-network-monitoring-kerndh7ds   1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-network-monitoring-kernzw6sb   1/1     Running   0          5m26s
-appdynamics-collectors-appdynamics-network-monitoring-reduqzp6h   1/1     Running   0          5m26s
 appdynamics-collectors-ds-appdynamics-otel-collector-c9wgs        1/1     Running   0          5m26s
 appdynamics-collectors-ds-appdynamics-otel-collector-nhmxl        1/1     Running   0          5m26s
 appdynamics-operators-appdynamics-cloud-operator-66f7cf766bg79s   2/2     Running   0          150m

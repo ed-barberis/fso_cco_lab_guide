@@ -61,7 +61,7 @@ default values for the OpenTelemetry Collector exporters. Use the following comm
 
 ```bash 
 helm install \
-  ${cco_lab_id}-otel-demo open-telemetry/opentelemetry-demo \
+  ${cco_lab_id}-otel-demo open-telemetry/opentelemetry-demo --version 0.29.2 \
   --set components.frontendProxy.service.type=LoadBalancer \
   --values otel-demo-webstore-override.yaml \
   -n $cco_lab_id
