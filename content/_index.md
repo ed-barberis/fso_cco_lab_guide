@@ -7,7 +7,7 @@ date: 2023-10-25T12:52:26-07:00
 
 In this workshop you will explore how Cisco Cloud Observability (CCO) can be used to monitor your cloud-native applications and infrastructure.
 
-![image](/images/10_cnao/introduction_cnao.png)
+![image](/images/31_explore_ui/ui_initial.png)
 
 ## Learning Objectives
 - Understand the Fundamentals of Cisco Cloud Observability: Gain a solid understanding of the key concepts, terminologies, and components that make up cloud-native application observability, including metrics, logs, and traces.
